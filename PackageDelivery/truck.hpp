@@ -1,5 +1,7 @@
+#include "box.hpp"
 class Truck
 {
+    public:
     char driver[32];
     int petrol;
     int money;

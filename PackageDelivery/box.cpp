@@ -6,12 +6,12 @@ struct Box
 
     Box()
     {
-        
+        length = width = height = 0;
     }
 
 
     int volume()
     {
-        
+        return length*width*height;
     }
 };

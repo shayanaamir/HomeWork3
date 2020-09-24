@@ -3,9 +3,9 @@
 class TruckDelivery{
     Truck trucks[100];
 public:
-    loadTrucks();
-    calculateCost();
-    makeJourney();
-    unloadTrucks();
+    void loadTrucks();
+    void calculateCost();
+    void makeJourney();
+    void unloadTrucks();
 };
 	
