@@ -1,8 +1,8 @@
 #include "truck.hpp"
 
 class TruckDelivery{
-    Truck trucks[100];
 public:
+    Truck trucks[10];
     void loadTrucks();
     void calculateCost();
     void makeJourney();

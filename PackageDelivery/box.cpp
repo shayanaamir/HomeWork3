@@ -1,3 +1,4 @@
+#include "box.hpp"
 struct Box
 {
     int length;

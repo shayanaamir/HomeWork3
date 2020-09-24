@@ -12,6 +12,6 @@ struct Box
 
     int volume()
     {
-        
+        return;
     }
 };
