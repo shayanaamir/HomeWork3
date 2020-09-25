@@ -4,6 +4,7 @@
 #include <iostream>
 
 using namespace std;
+int len;
 void TruckDelivery::loadTrucks()
 {
     ifstream x("Drivers.txt");
@@ -32,10 +33,11 @@ void TruckDelivery::loadTrucks()
         i++;
     }
     x.close();
+    len = i;
 }
 void TruckDelivery::calculateCost()
 {
-    for(int k=0; k<10; k++)
+    for(int k=0; k<len; k++)
     {
         float onewaydistance = 30.0;
         Truck t = trucks[k];
@@ -47,7 +49,7 @@ void TruckDelivery::calculateCost()
 }
 void TruckDelivery::makeJourney()
 {
-    for(int k=0; k<10; k++)
+    for(int k=0; k<len; k++)
     {
         float onewaydistance = 30.0;
         Truck t = trucks[k];
@@ -62,7 +64,8 @@ void TruckDelivery::makeJourney()
 void TruckDelivery::unloadTrucks()
 {
     ofstream newf("Trip.txt");
-    int len = sizeof(trucks) / sizeof(trucks[0]);
+    int j=0;
+    Truck k;
     for(int i=0; i<len; i++)
     {
         newf << trucks[i].driver << endl << 
