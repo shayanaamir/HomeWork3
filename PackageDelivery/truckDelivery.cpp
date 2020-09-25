@@ -62,7 +62,8 @@ void TruckDelivery::makeJourney()
 void TruckDelivery::unloadTrucks()
 {
     ofstream newf("Trip.txt");
-    for(int i=0; i<sizeof(trucks); i++)
+    int len = sizeof(trucks) / sizeof(trucks[0]);
+    for(int i=0; i<len; i++)
     {
         newf << trucks[i].driver << endl << 
         trucks[i].petrol << endl << 
