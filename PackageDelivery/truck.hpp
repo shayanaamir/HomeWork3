@@ -1,3 +1,4 @@
+#pragma once
 #include "box.hpp"
 class Truck
 {
@@ -9,18 +10,8 @@ class Truck
     int emptyMileage;
     Box box[10];
 
-    void load(int numBox)
-    {
-
-    }
-    void unload()
-    {
-
-    }
-
-    float cost()
-    {
-
-    }
+    void load(int numBox);
+    void unload();
+    float cost();
 };
 

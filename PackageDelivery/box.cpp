@@ -1,18 +1,9 @@
 #include "box.hpp"
-struct Box
+Box::Box()
 {
-    int length;
-    int width;
-    int height;
-
-    Box()
-    {
-        length = width = height = 0;
-    }
-
-
-    int volume()
-    {
-        return length*width*height;
-    }
-};
+    length = width = height = 0;
+}
+int Box::volume()
+{
+    return length * width * height;
+}

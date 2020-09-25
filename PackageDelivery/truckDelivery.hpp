@@ -1,3 +1,4 @@
+#pragma once
 #include "truck.hpp"
 
 class TruckDelivery{

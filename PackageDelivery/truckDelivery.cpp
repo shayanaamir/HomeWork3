@@ -1,4 +1,5 @@
 #include "truck.hpp"
+#include "truckDelivery.hpp"
 #include <fstream>
 #include <iostream>
 
@@ -13,19 +14,19 @@ void TruckDelivery::loadTrucks()
         Truck t;
         for (int j=0; j<sizeof(line); j++)
         {
-        t.driver[j]=line[i];
+        t.driver[j]=line[j];
         }
         getline(x,line);
-        t.petrol = stoi(line);
+        t.petrol = stof(line);
 
         getline(x,line);
-        t.money = stoi(line);
+        t.money = stof(line);
 
         getline(x,line);
-        t.emptyMileage = stoi(line);
+        t.emptyMileage = stof(line);
 
         getline(x,line);
-        t.fullMileage = stoi(line);
+        t.fullMileage = stof(line);
         t.load(10);
         trucks[i] = t;
         i++;
@@ -38,10 +39,10 @@ void TruckDelivery::calculateCost()
     {
         int onewaydistance = 30;
         Truck t = trucks[k];
-        int petrolgoing = onewaydistance/t.fullMileage;
-        int petrolcoming = onewaydistance/t.emptyMileage;
-        int totalcost = petrolcoming*2.73 + petrolgoing*2.73;
-        cout << "Truck " << k << " has cost " << totalcost << endl;
+        float petrolgoing = onewaydistance/t.fullMileage;
+        float petrolcoming = onewaydistance/t.emptyMileage;
+        float totalcost = (petrolcoming + petrolgoing)*2.73;
+        cout << "Truck " << t.driver << " has milegae " << t.emptyMileage << ", " << t.fullMileage << " has petrol going " << petrolgoing << " has coming " << petrolcoming << " total cost " << totalcost << endl;
     }
 }
 void TruckDelivery::makeJourney()
