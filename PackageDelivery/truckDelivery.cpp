@@ -37,7 +37,7 @@ void TruckDelivery::calculateCost()
 {
     for(int k=0; k<10; k++)
     {
-        int onewaydistance = 30;
+        float onewaydistance = 30.0;
         Truck t = trucks[k];
         float petrolgoing = onewaydistance/t.fullMileage;
         float petrolcoming = onewaydistance/t.emptyMileage;
@@ -49,11 +49,11 @@ void TruckDelivery::makeJourney()
 {
     for(int k=0; k<10; k++)
     {
-        int onewaydistance = 30;
+        float onewaydistance = 30.0;
         Truck t = trucks[k];
-        int petrolgoing = onewaydistance/t.fullMileage;
-        int petrolcoming = onewaydistance/t.emptyMileage;
-        int totalcost = petrolcoming*2.73 + petrolgoing*2.73;
+        float petrolgoing = onewaydistance/t.fullMileage;
+        float petrolcoming = onewaydistance/t.emptyMileage;
+        float totalcost = (petrolcoming + petrolgoing)*2.73;
         t.petrol = 50 - petrolgoing - petrolcoming;
         t.money = t.money - totalcost;
         trucks[k] = t;
