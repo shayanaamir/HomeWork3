@@ -1,6 +1,10 @@
 #include "HUPigeons.hpp"
 
+
+
 void HUPigeons::drawObjects(){
-    SDL_RenderCopy(gRenderer, assets, &srcRect, &srcRect);
-    pigeonMover.x++;
+    for (int i=0; i<20; i++)
+    {
+        my_pigeons[i].draw();  // set function name as draw... gRenderer
+    }
 }
