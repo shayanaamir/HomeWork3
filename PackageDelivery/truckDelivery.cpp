@@ -56,9 +56,13 @@ void TruckDelivery::makeJourney()
         float petrolgoing = onewaydistance/t.fullMileage;
         float petrolcoming = onewaydistance/t.emptyMileage;
         float totalcost = (petrolcoming + petrolgoing)*2.73;
+        if (t.money - totalcost >=0)
+        {
         t.petrol = 50 - petrolgoing - petrolcoming;
         t.money = t.money - totalcost;
+        cout << t.driver << " has made the journey." << endl;
         trucks[k] = t;
+        }
     }
 }
 void TruckDelivery::unloadTrucks()
@@ -73,5 +77,6 @@ void TruckDelivery::unloadTrucks()
         trucks[i].money << endl << 
         trucks[i].emptyMileage << endl << 
         trucks[i].fullMileage << endl;
+        trucks[i].unload();
     }
 }
